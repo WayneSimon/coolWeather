@@ -10,11 +10,30 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        flavorDimensions '1.0'
     }
+    productFlavors{
+        baidu{
+            applicationId "android.coolweather.com.coolweather.baidu"
+        }
+        qihoo{
+            applicationId "android.coolweather.com.coolweather.qihoo"
+        }
+    }
+    signingConfigs{
+        configs{
+            storeFile file(KEY_PATH)
+            storePassword KEY_PASS
+            keyAlias ALIAS_NAME
+            keyPassword ALIAS_PASS
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.configs
         }
     }
 }

@@ -6,3 +6,6 @@
 * buildToolsVersion '27.0.1'
 * compileSdkVersion 26
 * version 1.0
+
+在productFlavor发布不同版本时，由于gradle的原因，可能会报错，
+建议按照郭霖大神配置的环境测试，以免影响开发。
